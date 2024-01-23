@@ -50,7 +50,8 @@ This project is a basic recruiter tool that allows recruiters to manage candidat
    npm install
 
 ### Usage
-To start the development server and run the application:
+
+1. To start the development server and run the application:
 
    ```bash
    npm start
@@ -58,7 +59,8 @@ To start the development server and run the application:
 Open your browser and go to http://localhost:3000 to view the application. The page will automatically reload when you make changes.
 
 ### Server Setup
-For the server to run, use the following command:
+
+1. For the server to run, use the following command:
 
    ```bash
    pscale connect recruitment main --execute 'node server.js'
