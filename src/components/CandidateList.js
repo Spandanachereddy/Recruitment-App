@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const CandidateList = ({ onSelectCandidate }) => {
   const [candidates, setCandidates] = useState([]);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
@@ -12,7 +14,7 @@ const CandidateList = ({ onSelectCandidate }) => {
 
   const fetchCandidates = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/candidates');
+      const response = await axios.get(`${apiUrl}/candidates`);
       setCandidates(response.data);
     } catch (error) {
       console.error('Error fetching candidates:', error);
@@ -36,7 +38,7 @@ const CandidateList = ({ onSelectCandidate }) => {
 
   const handleDeleteCandidate = async (candidateId) => {
     try {
-      await axios.delete(`http://localhost:3001/candidates/${candidateId}`);
+      await axios.delete(`${apiUrl}/candidates/${candidateId}`);
       // Fetch candidates again after deletion
       fetchCandidates();
       // Clear the selected candidate details
