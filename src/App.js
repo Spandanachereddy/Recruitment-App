@@ -15,7 +15,7 @@ function App() {
 
   const addCandidate = async (newCandidate) => {
     try {
-      const response = await axios.post('http://localhost:3001/candidates', newCandidate);
+      const response = await axios.post('/candidates', newCandidate);
 
       setCandidate({
         nodeJsExperience: response.data.nodeJsExperience,
