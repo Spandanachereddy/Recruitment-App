@@ -12,7 +12,7 @@ const CandidateList = ({ onSelectCandidate }) => {
 
   const fetchCandidates = async () => {
     try {
-      const response = await axios.get('https://vermillion-gecko-2c34f2.netlify.app/candidates');
+      const response = await axios.get('http://localhost:3001/candidates');
       setCandidates(response.data);
     } catch (error) {
       console.error('Error fetching candidates:', error);
@@ -36,7 +36,7 @@ const CandidateList = ({ onSelectCandidate }) => {
 
   const handleDeleteCandidate = async (candidateId) => {
     try {
-      await axios.delete(`https://vermillion-gecko-2c34f2.netlify.app/candidates/${candidateId}`);
+      await axios.delete(`http://localhost:3001/candidates/${candidateId}`);
       // Fetch candidates again after deletion
       fetchCandidates();
       // Clear the selected candidate details
