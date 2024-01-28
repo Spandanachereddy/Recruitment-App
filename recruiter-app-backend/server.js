@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 //   // Add your database user, password, and other configurations here
 // });
 
-PLANETSCALE_DATABASE_URL='mysql://asmg5fvy5q4z7kzny2c5:pscale_pw_AJkQV5r9llFrxzlZG4PgrGSr4Uvc3MfTDXYZEj5OwWN@aws.connect.psdb.cloud/recruitment?ssl={"rejectUnauthorized":true}'
+PLANETSCALE_DATABASE_URL='mysql://o4z0h2t1qf3qdef063dw:pscale_pw_qFumUHyJ0JGd1xXTHus8zAjIMWcAlwfpXDIa37U4N8k@aws.connect.psdb.cloud/recruitment?ssl={"rejectUnauthorized":true}'
 const db = mysql.createConnection(PLANETSCALE_DATABASE_URL)
 
 console.log(db);
