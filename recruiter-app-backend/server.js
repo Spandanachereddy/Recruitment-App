@@ -12,10 +12,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Database Connection
-const db = mysql.createConnection({
-  host: process.env.PLANETSCALE_DATABASE_URL,
-  // Add your database user, password, and other configurations here
-});
+// const db = mysql.createConnection({
+//   host: process.env.PLANETSCALE_DATABASE_URL,
+//   // Add your database user, password, and other configurations here
+// });
+
+PLANETSCALE_DATABASE_URL='mysql://w03i1i1hmwiga6r5vao9:pscale_pw_5FSPkqH144qUbhh1Zz2YH6B9hV4uxiW2bvrvf5hWzAQ@aws.connect.psdb.cloud/recruitment?ssl={"rejectUnauthorized":true}'
+const db = mysql.createConnection(PLANETSCALE_DATABASE_URL)
 
 console.log(db);
 
