@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
-
+const connect = require("@planetscale/database")
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -11,14 +11,20 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Database Connection
-// const db = mysql.createConnection({
-//   host: process.env.PLANETSCALE_DATABASE_URL,
-//   // Add your database user, password, and other configurations here
-// });
 
-PLANETSCALE_DATABASE_URL='mysql://o4z0h2t1qf3qdef063dw:pscale_pw_qFumUHyJ0JGd1xXTHus8zAjIMWcAlwfpXDIa37U4N8k@aws.connect.psdb.cloud/recruitment?ssl={"rejectUnauthorized":true}'
-const db = mysql.createConnection(PLANETSCALE_DATABASE_URL)
+const config = {
+  host: process.env.DATABASE_HOST,
+  username: process.env.DATABASE_USERNAME,
+  password: process.env.DATABASE_PASSWORD
+}
+
+
+// Database Connection
+// const db = mysql.createConnection(config);
+const ss = process.env.PLANETSCALE_DATABASE_URL
+console.log(ss)
+const db = mysql.createConnection(ss)
+
 
 console.log(db);
 
